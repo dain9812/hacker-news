@@ -1,0 +1,35 @@
+.main {
+  .view-type {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    padding-bottom: 10px;
+    li {
+      font-size: 25px;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      line-height: 29px;
+      color: #c4c4c4;
+      &:first-child {
+        margin-right: 23px;
+      }
+      &.on {
+        color: #FF7118;
+        position: relative;
+      }
+      &.on::after {
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 52px;
+        height: 3px;
+        background-color: #FF7118;
+      }
+    }
+  }
+  > div {
+    padding-top: 19px;
+  }
+}

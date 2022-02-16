@@ -1,0 +1,32 @@
+.profile {
+  padding-top: 40px;
+  text-align: center;
+  .info {
+    padding: 45px 0;
+    display: flex;
+    p {
+      flex-basis: 50%;
+      font-size: 22px;
+      font-family: 'Roboto Condensed', sans-serif;
+      span {
+        display: block;
+        font-size: 26px;
+      }
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: space-between;
+    button {
+      font-size: 15px;
+      background: none;
+      color: #FF7118;
+      border: 1px solid #FF7118;
+      padding: 5px 0;
+      flex: 1;
+      &:nth-child(2) {
+        margin: 0 9px;
+      }
+    }
+  }
+}
