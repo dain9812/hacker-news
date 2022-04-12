@@ -10,7 +10,7 @@ export const getStory = async (id) => {
 
 export const getStories = async (type, preItem) => {
   const { data: storyIds } = await axios.get(`${url}/${type}stories${json}`);
-  const stories = await Promise.all(storyIds.slice(preItem, 30).map(getStory));
+  const stories = await axios.all(storyIds.slice(preItem, 30).map(getStory));
   return stories;
 };
 
@@ -20,11 +20,9 @@ export const getUser = async (id) => {
 };
 
 export const getComments = async (ids) => {
-  let postsArray = [];
-  ids.forEach(async (id) => {
-    await postsArray.push(getStory(id).then((post) => post.data));
-  });
-  return await axios.all(postsArray).then((posts) => {
-    return posts;
-  });
+  let commentsArray = [];
+  const lists = await axios.all(ids.map(getStory));
+  lists.map((list) => commentsArray.push(list.data));
+  const comments = await axios.all(commentsArray);
+  return comments;
 };
