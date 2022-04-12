@@ -35,7 +35,7 @@ const CardType = ({
     setPop((isOpen) => !isOpen);
   };
 
-  const Type1 = () => {
+  const ShowCard = () => {
     if (title.includes("Show HN:") === true) {
       title = title.substr(8);
     }
@@ -73,7 +73,7 @@ const CardType = ({
     );
   };
 
-  const Type2 = () => {
+  const AskCard = () => {
     const [cardOpen, setCardOpen] = useState(false);
 
     let askTitle = "";
@@ -154,7 +154,7 @@ const CardType = ({
     );
   };
 
-  const Type3 = () => (
+  const JobCard = () => (
     <div className="card">
       <div className="link">
         <a href={url} target="_blank">
@@ -173,13 +173,13 @@ const CardType = ({
 
   switch (type) {
     case "show":
-      return Type1();
+      return ShowCard();
     case "ask":
-      return Type2();
+      return AskCard();
     case "job":
-      return Type3();
+      return JobCard();
     default:
-      return Type1();
+      return ShowCard();
   }
 };
 
